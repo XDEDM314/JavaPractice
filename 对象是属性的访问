@@ -1,0 +1,28 @@
+public class test
+	{
+		A x1;
+		public static void main(String[] args)
+			{
+			D d=new D();/*【创建对象d作为D中的引用】*/
+			C c=new C();/*【创建对象c作为C中的引用】*/
+			B b=new B();/*【创建对象b作为B中的引用】*/
+			A a=new A();/*【创建对象a作为A中的引用】*/
+			test t=new test();/*【创建对象c作为C中的引用】*/
+			t.x1=a;/*【把A类中的对象a赋值给test类对象t的属性x1】*/
+			a.x2=b;/*【把B类中的对象b赋值给A类对象a的属性x2】*/
+			b.x3=c;/*【把C类中的对象c赋值给B类对象b的属性x3】*/
+			c.x4=d;/*【把D类中的对象d赋值给C类对象c的属性x4】*/
+			d.i=10;/*【把10赋值给D类对象d的属性i】*/
+			System.out.println(t.x1.x2.x3.x4.i);
+/*【对象.属性.属性.属性.属性;】
+【对象是该类的对象，属性必须通过类的赋值传递，否则会空指针异常】*/
+			}
+	}
+class A{B x2;}
+class B{C x3;}
+class C{D x4;}
+class D{int i;}
+/*【x2作为A类中的引用兼属性，同时具有B类的属性】
+【x3作为B类中的引用兼属性，同时具有C类的属性】
+【x4作为C类中的引用兼属性，同时具有D类的属性】
+【i作为D类中的引用兼属性，同时具有“量为int类型值”的属性】*/
