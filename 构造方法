@@ -1,0 +1,30 @@
+public class test
+	{
+		public static void main(String[] args)
+			{
+			Vip s1=new Vip(11L,"张三");
+			System.out.println(s1.number);
+			System.out.println(s1.name);
+			}
+	}
+---------------------------------------------
+public class Vip
+{
+	long number;
+	String name;
+	String birth;
+	boolean sex;
+
+	public Vip()
+	{
+	}
+	public Vip(long a)
+	{
+		number=a;
+	}
+	public Vip(long a,String b)
+	{
+		number=a;
+		name=b;
+	}
+}
