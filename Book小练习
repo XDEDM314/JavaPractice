@@ -1,0 +1,56 @@
+通过代码封装：
+1.创建一个book类，具有书名、页数的属性；若页数小于200，则默认200页
+2.具有方法detail，在控制台输出每本书的名称和页数
+3.测试，输入页数，并调用detail输出信息
+---------------------------------------------
+public class test
+{
+	public static void main(String[] args)
+	{
+		Book b1=new Book();
+		b1.detail();
+	}
+}
+/*book类*/
+class Book
+{
+	private String name;
+	private int pageNum;
+	/*构造方法*/
+	public Book()/*无参*/
+	{
+		name="书名未知";
+	}
+	public Book(String s,int n)
+	{
+		name=s;
+		pageNum=n;
+	}
+	public void setName(String s)
+	{
+		name=s;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public void setPageNum(int i)
+	{
+		if(i<200)
+		{
+			System.out.println("输入页数不满200页");
+			pageNum=200;
+			return;
+		}
+		pageNum=i;
+	}
+	public int getPageNum()
+	{
+		return pageNum;
+	}
+	/*构造detail方法*/
+public void detail()
+	{
+	System.out.println("书名是："+name+","+"页数是："+pageNum);
+	}
+}
