@@ -1,0 +1,28 @@
+public class test
+{
+	public static void main(String[] args)
+	{
+		Customer c1=new Customer("张三");
+		c1.shopping();
+		Customer c2=new Customer("李四");
+		c2.shopping();
+	}
+}
+/*以下为顾客类*/
+class Customer
+{
+/*定义名字以及构造方法*/
+	String name;
+	public Customer()
+		{
+		}
+	public Customer(String s)
+		{
+			name=s;
+		}
+/*实例方法shopping*/
+	public void shopping()
+	{
+	System.out.println(this.name+"is shopping");/*【this.在这里可以省略】*/
+	}
+}
