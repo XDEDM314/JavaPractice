@@ -1,0 +1,64 @@
+------------------------------------------------------------
+test.java
+------------------------------------------------------------
+public class test
+{
+	public static void main(String[] args)
+		{
+		/*创建乐器*/
+		Instrument e1=new Erhu();
+		Instrument p1=new Piano();
+		Instrument v1=new Violin();
+		/*创建乐手*/
+		Musician m=new Musician();
+		/*弹奏乐器*/
+		m.play(e1);
+		m.play(p1);
+		m.play(v1);
+		}
+}
+------------------------------------------------------------
+Musician.java
+------------------------------------------------------------
+/*创建乐手类*/
+public class Musician
+{
+	public void play(Instrument i)
+	{
+		i.makeSound();
+	}
+}
+------------------------------------------------------------
+Instrument.java
+------------------------------------------------------------
+/*创建父类：乐器*/
+public class Instrument
+{
+	public void makeSound()
+	{
+		System.out.println("乐手弹奏了乐器");
+	}
+}
+/*创建不同的子类乐器*/
+class Erhu extends Instrument
+{
+	public void makeSound()
+	{
+		System.out.println("乐手弹奏了二胡");
+	}
+}
+class Piano extends Instrument
+{
+	public void makeSound()
+	{
+		System.out.println("乐手弹奏了钢琴");
+	}
+}
+class Violin extends Instrument
+{
+	public void makeSound()
+	{
+		System.out.println("乐手弹奏了小提琴");
+	}
+}
+------------------------------------------------------------
