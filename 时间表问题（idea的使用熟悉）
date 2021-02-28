@@ -1,0 +1,91 @@
+public class Test1 {
+    public static void main(String[] args) {
+        Time t1=new Time(10,20,36);
+        t1.display();
+        t1.addsec(56);
+    }
+}
+class Time{
+    private int hour;
+    private int min;
+    private int sec;
+    private int sums;
+    public Time(){
+
+    }
+
+    public Time(int hour, int min, int sec) {
+        this.hour = hour;
+        this.min = min;
+        this.sec = sec;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public int getSec() {
+        return sec;
+    }
+
+    public int getSums() {
+        return sums;
+    }
+
+    public void setSums(int sums) {
+        this.sums = sums;
+    }
+
+    public void setSec(int sec) {
+        this.sec = sec;
+    }
+    public void display(){
+        sums=hour*3600+min*60+sec;
+        if(sums<=0||sums>=24*3600+59*60+60)
+            System.out.println("超过一天的时间范围");
+        else{
+            System.out.println(sums/3600+"："+(sums%3600)/60+"："+sums%60);
+        }
+    }
+    public void addhour(int hour){
+        this.hour=this.hour+hour;
+        display();
+    }
+
+    public void subhour(int hour){
+        this.hour=this.hour-hour;
+        display();
+    }
+
+    public void addmin(int min){
+        this.min=this.min+min;
+        display();
+    }
+
+    public void submin(int min){
+        this.min=this.min-min;
+        display();
+    }
+
+    public void subsec(int sec){
+        this.sec=this.sec-sec;
+        display();
+    }
+
+    public void addsec(int sec){
+        this.sec=this.sec+sec;
+        display();
+    }
+}
